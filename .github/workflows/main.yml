@@ -90,10 +90,9 @@ jobs:
         name: deploy the image in a container
         uses: addnab/docker-run-action@v3
         with:
-          images: obachimex/nodeapp
+          image: obachimex/nodeapp
           tags: ${{ steps.meta.outputs.tags }}
           run: |
-
             echo ${{ steps.docker_build.outputs.digest }}
             
       - name: Send custom JSON data to Slack workflow
