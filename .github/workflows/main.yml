@@ -82,18 +82,11 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
-          push: false
+          push: true
   
           tags: ${{ steps.meta.outputs.tags }}
           
           
-      - 
-        name: deploy the image in a container
-        uses: addnab/docker-run-action@v3
-        with:
-          image: obachimex/nodeapp:${{ steps.meta.outputs.tags }}
-          run: |
-            echo ${{ steps.docker_build.outputs.digest }}
             
       - name: Send custom JSON data to Slack workflow
         id: slack
