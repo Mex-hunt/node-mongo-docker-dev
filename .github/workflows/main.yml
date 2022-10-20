@@ -91,7 +91,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: obachimex/nodeapp
-          tags: ${{ steps.meta.outputs.tags }}
           run: |
             echo ${{ steps.docker_build.outputs.digest }}
             
