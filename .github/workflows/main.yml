@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-          #sends notification to my slack
+          #sends notification to my slack channel
         
       - name: Send custom JSON data to Slack workflow
         id: slack
@@ -58,9 +58,6 @@ jobs:
 
     needs: [build_test]
     steps:
-    
-      - name: checkout my repo for files
-        uses: actions/checkout@v2
     
       -
         name: Checkout
