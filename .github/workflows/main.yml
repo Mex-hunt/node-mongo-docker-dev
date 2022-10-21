@@ -59,6 +59,9 @@ jobs:
     needs: [build_test]
     steps:
     
+      - name: checkout my repo for files
+        uses: actions/checkout@v2
+    
     
       - name: Start containers
         run: docker-compose up -d         
